@@ -6,7 +6,8 @@ Przycisk logowania przez google oauth na stronę internetową www (oAuth2).
 
 ## Dodaj klucz oAuth do swojej aplikacji (pobierz plik json klucza z clientId)
 Dodaj adresy uri dla klucza
-- http://localhost i http://localhost:8000
+- http://localhost
+- http://localhost:8000
 
 ## Generator przycisku logowania Google
 <https://developers.google.com/identity/gsi/web/tools/configurator?hl=en>
