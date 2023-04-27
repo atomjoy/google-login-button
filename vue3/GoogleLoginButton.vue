@@ -28,6 +28,11 @@ async function verifyTokenUserInfo(id_token) {
 		const res = await axios.get(`https://oauth2.googleapis.com/tokeninfo?id_token=${id_token}`)
 		console.log('Logged user detail', res)
 		return res.data
+		
+		// JWT token validation with callback controller in Laravel (OauthGoogle.php)
+		// const res = await axios.get(`/oauth/google?id_token=${id_token}`)
+		// console.log('Logged user detail', res)
+		// return res.data.userinfo
 	} catch (err) {
 		console.log('Login error', err)
 		user.value = null
