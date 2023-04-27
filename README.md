@@ -14,6 +14,8 @@ Dodaj adresy uri dla klucza
 
 ## Przycisk z Javascript Api
 
+Zmień google klient id: <GOOGLE_CLIENT_ID>.apps.googleusercont.com
+
 ```html
 <!DOCTYPE html>
 <html lang="pl">
@@ -70,6 +72,8 @@ Dodaj adresy uri dla klucza
 ```
 
 ## Przycisk z Html Api
+
+Zmień google klient id: <GOOGLE_CLIENT_ID>.apps.googleusercont.com
 
 ```html
 <!DOCTYPE html>
