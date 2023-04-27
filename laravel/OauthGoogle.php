@@ -63,6 +63,7 @@ class OauthGoogle extends Controller
 				"response" => $response->json()
 			], 422);
 		} catch (Exception $e) {
+			report($e);
 			return response()->json([
 				'message' => 'Validation Error.',
 			], 422);
