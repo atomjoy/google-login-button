@@ -114,3 +114,4 @@ php artisan serve --host=localhost --port=8000
 - JWT walidacja i pobranie google userinfo użytkownika zalogowanego z <https://oauth2.googleapis.com/tokeninfo?id_token={id_token}>
 - Zalogowanie użytkownika na backendzie php
 - Ustawienie sessji, odesłanie danych zalogowanego usera
+- Dokumentacja: <https://developers.google.com/identity/sign-in/web/backend-auth?hl=pl>
