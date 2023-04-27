@@ -2,7 +2,7 @@
 
 Przycisk logowania przez google oauth na stronę internetową www (oAuth2) w vue3 z przekierowaniem na backend.
 
-## Url generator
+## Google Login Button url generator
 
 ```js
 // Vue Google login button custom url for redirects with callback
