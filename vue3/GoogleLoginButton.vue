@@ -8,7 +8,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
-let clientId = '930811573566-mn667pj7haerju2kd00stbf1ou34hrje.apps.googleusercontent.com'
+let clientId = '<GOOGLE-CLIENT-ID>.apps.googleusercontent.com'
 let user = ref(null)
 
 // Get token after login
