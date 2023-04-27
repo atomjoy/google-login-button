@@ -1,13 +1,15 @@
 # Google przycisk logowania
-Przycisk logowania przez google oauth na stronę www (oAuth2).
+Przycisk logowania przez google oauth na stronę internetową www (oAuth2).
 
-## Laravel server
+## Utwórz swoją aplikację
+<https://console.cloud.google.com>
 
-Dodaj w google+ api do klucza uri: http://localhost i http://localhost:8000 (Przy błędzie invalid origin ...)
+## Dodaj klucz oAuth do swojej aplikacji (pobierz plik json klucza z clientId)
+Dodaj adresy uri dla klucza
+- http://localhost i http://localhost:8000
 
-```sh
-php artisan serve --host=localhost --port=8000
-```
+## Generator przycisku logowania Google
+<https://developers.google.com/identity/gsi/web/tools/configurator?hl=en>
 
 ## Javascript Api
 
@@ -65,6 +67,15 @@ php artisan serve --host=localhost --port=8000
 </body>
 </html>
 ```
+
+## Uruchom server Laravel
+
+Dodaj w google+ api do klucza uri: http://localhost i http://localhost:8000 (Przy błędzie invalid origin ... puste okienko logowania)
+
+```sh
+php artisan serve --host=localhost --port=8000
+```
+
 
 ## Backend
 
