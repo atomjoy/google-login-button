@@ -19,8 +19,8 @@ Dodaj adresy uri dla klucza
 <html lang="pl">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 <body>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>		
@@ -73,11 +73,10 @@ Dodaj adresy uri dla klucza
 
 ```html
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<html lang="pl">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 <body>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>		
