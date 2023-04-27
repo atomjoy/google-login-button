@@ -1,6 +1,13 @@
 # Laravel google login button callback
 Google login button callback controller for Laravel.
 
+## Settings
+Create google client id w .env
+
+```env
+VITE_GOOGLE_OAUTH_CLIENT_ID="<GOOGLE-CLIENT_ID>.apps.googleusercontent.com"
+```
+
 ## Routes
 
 routes.php
