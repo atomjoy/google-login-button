@@ -12,7 +12,7 @@ Dodaj adresy uri dla klucza
 ## Generator przycisku logowania Google
 <https://developers.google.com/identity/gsi/web/tools/configurator?hl=en>
 
-## Javascript Api
+## Przycisk z Javascript Api
 
 ```html
 <!DOCTYPE html>
@@ -65,6 +65,34 @@ Dodaj adresy uri dla klucza
     }
   </script>
   <div id="buttonDiv"></div>
+</body>
+</html>
+```
+
+## Przycisk z Html Api
+
+```html
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<body>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>		
+    function onSignout() {
+      google.accounts.id.disableAutoSelect();
+    }
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+      // Send to backend server and uthenticate user
+      // Confirm jwt token (backend) and get google userinfo from: https://oauth2.googleapis.com/tokeninfo?id_token={id_token}
+    }
+  </script>
+
+  <div id="g_id_onload" data-client_id="<GOOGLE_CLIENT_ID>.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse" data-nonce="" data-itp_support="true"></div>
+  <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue" data-text="signin_with," data-size="large" data-logo_alignment="left"></div>
 </body>
 </html>
 ```
