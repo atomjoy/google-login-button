@@ -1,4 +1,5 @@
 # Vue3 google login button
+Przykład logowania z użyciem Google login button.
 
 ## Dodaj skrypt do nagłówka strony
 ```js
@@ -7,7 +8,9 @@
 </head>
 ```
 
-## Zmień clientId w GoogleLoginButton.vue
+## Zmień clientId 
+
+Zmień google client id w komponencie GoogleLoginButton.vue
 
 ```vue
 let clientId = '<GOOGLE-CLIENT-ID>.apps.googleusercontent.com'
@@ -25,3 +28,7 @@ router.js
   component: () => import('../views/google/GoogleLoginButton.vue'),
 },
 ```
+
+## Screenshots
+<img src="https://raw.githubusercontent.com/atomjoy/google-login-button/main/vue3/vue3-google-login.png" width="100%">
+<img src="https://raw.githubusercontent.com/atomjoy/google-login-button/main/vue3/vue3-google-logged-user.png" width="100%">
