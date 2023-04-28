@@ -4,6 +4,7 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
 
+
   // Add in vite .env file
   VITE_GOOGLE_OAUTH_CLIENT_ID="<GOOGLE-CLIENT_ID>.apps.googleusercontent.com"
 -->
