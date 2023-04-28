@@ -14,6 +14,7 @@ use Google\Client as GoogleClient;
 /**
  * Add client_id in .env file
  * VITE_GOOGLE_OAUTH_CLIENT_ID="<GOOGLE-CLIENT-ID>"
+ *
  * Required packages:
  * composer require google/apiclient:^2.13.2,
  */
