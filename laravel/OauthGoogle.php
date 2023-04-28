@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
+/**
+ * Add client_id in .env file
+ * VITE_GOOGLE_OAUTH_CLIENT_ID="<GOOGLE-CLIENT-ID>"
+ */
 class OauthGoogle extends Controller
 {
 	// Jwt validation url
