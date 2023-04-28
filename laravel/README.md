@@ -45,7 +45,7 @@ return new class extends Migration
 			}
 
 			if (!Schema::hasColumn('users', 'oauth_provider')) {
-				$table->string('oauth_provider', 100)->default('local');
+				$table->string('oauth_provider', 100)->nullable()->default('local');
 			}
 		});
 	}
