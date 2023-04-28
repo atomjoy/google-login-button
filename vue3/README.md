@@ -1,5 +1,5 @@
-# Vue3 google login button
-Przykład logowania z użyciem Google login button (tylko javascript bez servera backend).
+# Vue3 Google login button
+Przykład logowania z użyciem Google login button (default javascript).
 
 ## Dodaj skrypt do nagłówka strony
 ```js
@@ -31,7 +31,7 @@ router.js
 
 ## Backend Laravel
 
-### Usuń lub skomentuj w GoogleloginButton.vue
+### Usuń lub skomentuj w GoogleLoginButton.vue
 
 ```js
 // Javascript (tests only)
