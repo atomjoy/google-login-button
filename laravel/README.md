@@ -70,4 +70,4 @@ php artisan migrate
 
 ## Users table
 
-Utwórz w tabeli users użytkownika z adresem email konta Google z którego będziesz się zalogujesz !!!
+Utwórz w tabeli users użytkownika z adresem email konta Google z którego będziesz się logował !!!
