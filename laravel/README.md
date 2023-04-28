@@ -1,8 +1,8 @@
-# Laravel google login button callback
-Google login button callback controller for Laravel.
+# Laravel google login button kontroler
+Google login button kontroler w Laravel.
 
 ## Settings
-Create google client id w .env
+Dodaj google client id w pliku .env
 
 ```env
 VITE_GOOGLE_OAUTH_CLIENT_ID="<GOOGLE-CLIENT_ID>.apps.googleusercontent.com"
@@ -23,7 +23,7 @@ Route::get('/oauth/google', [OauthGoogle::class, 'index'])->name('oauth.google')
 
 ## Database
 
-Laravel remeber_me the table columns.
+Remember me w Laravel aktualizacja tabeli user
 
 ```php
 <?php
@@ -61,3 +61,13 @@ return new class extends Migration
 	}
 };
 ```
+
+### Migrate
+
+```sh
+php artisan migrate
+```
+
+### Users table
+
+Utwórz w tabeli users użytkownika z adresem email konta Google z którego będziesz się zalogujesz !!!
