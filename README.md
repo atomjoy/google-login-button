@@ -1,5 +1,5 @@
-# Google przycisk logowania
-Przycisk logowania przez google oauth na stronę internetową www (oAuth2).
+# Logowanie za pomocą konta Google (Google signin button)
+Funkcja Zaloguj się przez Google umożliwia łatwe i bezpieczne logowanie się w aplikacjach lub usługach innych firm przy użyciu konta Google. Przycisk logowania google oauth na stronę internetową www (oAuth2).
 
 ## Utwórz swoją aplikację
 <https://console.cloud.google.com>
