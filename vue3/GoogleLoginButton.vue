@@ -3,18 +3,21 @@
   <head>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
+
+  // Add in vite .env file
+  VITE_GOOGLE_OAUTH_CLIENT_ID="<GOOGLE-CLIENT_ID>.apps.googleusercontent.com"
 -->
 
 <script setup>
 import { onMounted, ref } from 'vue'
 
-let clientId = '<GOOGLE-CLIENT-ID>.apps.googleusercontent.com'
 let user = ref(null)
+let clientId = import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID
+const callback_url = '/oauth/google'
 
 // Get token after login
 async function handleCredentialResponse(response) {
 	console.log('Encoded JWT ID token: ' + response.credential)
-
 	// Backend token verification here (login user on backend server)
 	user.value = await verifyTokenUserInfo(response.credential)
 }
@@ -24,15 +27,16 @@ async function handleCredentialResponse(response) {
 // Return logged user detail from backend here
 async function verifyTokenUserInfo(id_token) {
 	try {
+		// Javascript (tests only)
 		// JWT token validation with google server
 		const res = await axios.get(`https://oauth2.googleapis.com/tokeninfo?id_token=${id_token}`)
 		console.log('Logged user detail', res)
 		return res.data
-		
-		// JWT token validation with callback controller in Laravel (OauthGoogle.php)
-		// const res = await axios.get(`/oauth/google?id_token=${id_token}`)
-		// console.log('Logged user detail', res)
-		// return res.data.userinfo
+
+		// Laravel backend server JWT token validation and user authentication
+		const resb = await axios.get(`${callback_url}?id_token=${id_token}`)
+		console.log('Logged user detail', resb)
+		return resb.data.userinfo
 	} catch (err) {
 		console.log('Login error', err)
 		user.value = null
