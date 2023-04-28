@@ -62,12 +62,12 @@ return new class extends Migration
 };
 ```
 
-### Migrate
+## Migrate
 
 ```sh
 php artisan migrate
 ```
 
-### Users table
+## Users table
 
 Utwórz w tabeli users użytkownika z adresem email konta Google z którego będziesz się zalogujesz !!!
