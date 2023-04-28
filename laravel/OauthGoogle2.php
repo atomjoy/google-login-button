@@ -6,17 +6,22 @@ use Exception;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 use Google\Client as GoogleClient;
 
 /**
- * Add client_id in .env file
+ * Add in .env file
+ *
  * VITE_GOOGLE_OAUTH_CLIENT_ID="<GOOGLE-CLIENT-ID>"
  *
  * Required packages:
  * composer require google/apiclient:^2.13.2,
+ *
+ * Table users add columns:
+ * $table->remeberToken();
+ * $table->string('oauth_provider', 100)->default('local');
  */
 class OauthGoogle2 extends Controller
 {
@@ -35,7 +40,7 @@ class OauthGoogle2 extends Controller
 	 * Required packages:
 	 * composer require google/apiclient:^2.13.2,
 	 */
-	protected $validateWithGoogleClient = true;
+	protected $validateWithGoogleClient = false;
 
 	function index()
 	{
