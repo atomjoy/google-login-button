@@ -40,8 +40,8 @@ class OauthGoogle extends Controller
 				// Json string
 				$arr = $response->json();
 				// Confirm client id
-				if ($arr['aud'] != $this->clientId && $arr['iss'] == $this->iss) {
-					throw new Exception('Token validation error.', 422);
+				if ($arr['aud'] != $this->clientId || $arr['iss'] != $this->iss) {
+					throw new Exception('Invalid jwt id_token details.', 422);
 				}
 
 				// Login user if exists in database
@@ -70,6 +70,7 @@ class OauthGoogle extends Controller
 			report($e);
 			return response()->json([
 				'message' => 'Validation Error.',
+				"response" => null,
 			], 422);
 		}
 	}
