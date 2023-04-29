@@ -79,7 +79,7 @@ class OauthGoogle2 extends Controller
 				// Get array from response
 				$arr = $response->json();
 				// Check token details
-				if ($arr['aud'] != $this->clientId && $arr['iss'] == $this->iss) {
+				if ($arr['aud'] != $this->clientId || $arr['iss'] != $this->iss) {
 					return response()->json([
 						'message' => 'Invalid jwt id_token details.',
 						"response" => $response->json(),
