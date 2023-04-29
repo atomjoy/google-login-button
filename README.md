@@ -1,5 +1,5 @@
 # Logowanie za pomocą konta Google (Google signin button)
-Funkcja Zaloguj się przez Google umożliwia łatwe i bezpieczne logowanie się w aplikacjach lub usługach innych firm przy użyciu konta Google. Przycisk logowania google oauth na stronę internetową www (oAuth2).
+Funkcja Zaloguj się przez Google umożliwia łatwe i bezpieczne logowanie się w aplikacjach lub usługach innych firm przy użyciu konta Google. Przycisk logowania Google oAuth na stronę internetową www (oAuth2).
 
 ## Utwórz swoją aplikację
 <https://console.cloud.google.com>
@@ -116,11 +116,11 @@ async function verifyTokenUserInfo(id_token) {
 		console.log('Logged user detail', res)
 		return res.data
     
-    // Server url
-    const callback_url = '/oauth/google'
+    		// Server url
+    		const callback_url = '/oauth/google'
 
 		// Laravel backend server JWT token validation with curl request to google url: https://oauth2.googleapis.com/tokeninfo?id_token=
-    // Login user on backend server and return userinfo details
+    		// Login user on backend server and return userinfo details
 		const resb = await axios.get(`${callback_url}?id_token=${id_token}`)
 		console.log('Logged user detail', resb)
 		return resb.data.userinfo
