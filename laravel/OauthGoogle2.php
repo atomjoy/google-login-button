@@ -22,6 +22,7 @@ use Google\Client as GoogleClient;
  * Table users add columns:
  * $table->remeberToken();
  * $table->string('oauth_provider', 100)->default('local');
+ *
  */
 class OauthGoogle2 extends Controller
 {
