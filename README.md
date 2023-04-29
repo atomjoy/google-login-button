@@ -5,9 +5,10 @@ Funkcja Zaloguj się przez Google umożliwia łatwe i bezpieczne logowanie się 
 <https://console.cloud.google.com>
 
 ## Dodaj klucz oAuth do swojej aplikacji (pobierz plik json klucza z clientId)
-Dodaj adresy uri dla klucza
+Dodaj adresy uri dla klucza wideo: <https://www.youtube.com/watch?v=EaSWnk5fLdc>
 - http://localhost
 - http://localhost:8000
+- https://your.page.url
 
 ## Generator przycisku logowania Google
 <https://developers.google.com/identity/gsi/web/tools/configurator?hl=en>
