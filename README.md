@@ -141,10 +141,12 @@ Dodaj w google+ api do klucza uri: http://localhost i http://localhost:8000 (Prz
 php artisan serve --host=localhost --port=8000
 ```
 
-
 ## Backend
 
 - JWT walidacja i pobranie google userinfo użytkownika zalogowanego z <https://oauth2.googleapis.com/tokeninfo?id_token={id_token}>
 - Zalogowanie użytkownika na backendzie php
 - Ustawienie sessji, odesłanie danych zalogowanego usera
 - Dokumentacja: <https://developers.google.com/identity/sign-in/web/backend-auth?hl=pl>
+
+## Images
+<img src="https://raw.githubusercontent.com/atomjoy/google-login-button/main/vue3/vue3-google-login.png" width="100%">
