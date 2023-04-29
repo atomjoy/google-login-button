@@ -100,6 +100,38 @@ Zmień google klient id: <GOOGLE_CLIENT_ID>.apps.googleusercont.com
 </html>
 ```
 
+## JWT token walidacja
+
+Walidacja tokena jwt w js lub na serverze backendowym i pobranie danych userinfo.
+
+```js
+// Validate jwt token on your backend server (this is sample with google server)
+// Login user on backend server with session
+// Return logged user detail from backend here
+async function verifyTokenUserInfo(id_token) {
+	try {
+		// Javascript (tests only)
+		// JWT token validation with google server
+		const res = await axios.get(`https://oauth2.googleapis.com/tokeninfo?id_token=${id_token}`)
+		console.log('Logged user detail', res)
+		return res.data
+    
+    // Server url
+    const callback_url = '/oauth/google'
+
+		// Laravel backend server JWT token validation with curl request to google url: https://oauth2.googleapis.com/tokeninfo?id_token=
+    // Login user on backend server and return userinfo details
+		const resb = await axios.get(`${callback_url}?id_token=${id_token}`)
+		console.log('Logged user detail', resb)
+		return resb.data.userinfo
+	} catch (err) {
+		console.log('Login error', err)
+		user.value = null
+		return null
+	}
+}
+```
+
 ## Uruchom server Laravel
 
 Dodaj w google+ api do klucza uri: http://localhost i http://localhost:8000 (Przy błędzie invalid origin ... puste okienko logowania)
