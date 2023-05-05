@@ -29,27 +29,50 @@ class OauthGoogle extends Controller
 		try {
 			// Get google client id from .env
 			$this->clientId = env('VITE_GOOGLE_OAUTH_CLIENT_ID');
+			
 			// Check key
 			if (empty($this->clientId)) {
-				throw new Exception('Invalid client id', 422);
+				return response()->json([
+					'message' => 'Empty client id.',
+					"response" => null,
+				], 422);
 			}
+			
+			// JWT token
+			$id_token = request()->input('id_token');
+			
+			// Check token
+			if (empty($id_token)) {
+				return response()->json([
+					'message' => 'Empty id_token.',
+					"response" => null,
+				], 422);
+			}
+			
 			// Check google token
-			$response = Http::get($this->url, ["id_token" => request()->input('id_token')]);
+			$response = Http::get($this->url, ["id_token" => $id_token]);
+			
 			// Check
 			if ($response->ok()) {
 				// Json string
 				$arr = $response->json();
+				
 				// Confirm client id
 				if ($arr['aud'] != $this->clientId || $arr['iss'] != $this->iss) {
-					throw new Exception('Invalid jwt id_token details.', 422);
+					return response()->json([
+						'message' => 'Invalid jwt id_token details.',
+						"response" => null,
+					], 422);
 				}
 
 				// Login user if exists in database
 				$user = User::where(['email' => $arr['email']])->first();
+				
 				// If user != null
 				if ($user) {
 					// Login user
 					Auth::login($user, true);
+					
 					// If logged
 					if (Auth::check()) {
 						return response()->json([
