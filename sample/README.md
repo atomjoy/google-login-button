@@ -27,7 +27,8 @@ export const getGoogleLoginButtonUrl = (from) => {
     // Get with access_token
     response_type: 'token',
     access_type: 'online',
-    // Backend get userinfo send with bearer header with access_token to:
+    // Backend get userinfo details 
+    // Create GET request add bearer auth header with access_token and send to:
     // `https://www.googleapis.com/oauth2/v2/userinfo`
     // `https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=${access_token}`
     
@@ -48,3 +49,39 @@ export const getGoogleLoginButtonUrl = (from) => {
   return `${rootUrl}?${query.toString()}`
 }
 ```
+
+## Php Google login button
+Jak w php utworzyć przycisk logowania google i pobierać informacje o użytkowniku.
+
+### Link do przekierowania usera
+
+```php
+$google_login_button_url = 'https://accounts.google.com/o/oauth2/v2/auth?scope=' . urlencode('https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email) . '&redirect_uri=' . urlencode(GOOGLE_REDIRECT_URL) . '&response_type=code&client_id=' . GOOGLE_ID . '&access_type=online';
+```
+
+### Pobieranie access_token z parametrem code
+
+```php
+<?php
+
+// Get access_token from code POST method
+$url = 'https://accounts.google.com/o/oauth2/token';
+
+// Send data
+$curlPostData = 'client_id='.GOOGLE_ID.'&redirect_uri='.urlencode(GOOGLE_REDIRECT_URL).'&client_secret='.GOOGLE_SECRET.'&code='.$_GET['code'].'&grant_type=authorization_code';
+```
+
+### Pobieranie userinfo z access_token i nagłówkiem bearer
+
+```php
+// Headers
+$header = 'Authorization: Bearer ' . $data['access_token'];
+
+// Url
+$url = 'https://www.googleapis.com/oauth2/v2/userinfo';
+$url = 'https://www.googleapis.com/oauth2/v2/userinfo?fields=email,verified_email';
+```
+
+### Dokumentacja, przykłady
+- https://developers.google.com/identity/protocols/oauth2/web-server?hl=pl#httprest_2
+- https://github.com/kamilwyremski/logowanie-google/blob/master/index.php
