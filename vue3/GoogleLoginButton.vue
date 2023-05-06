@@ -102,6 +102,12 @@ onMounted(() => {
 	</div>
 </template>
 
+<style>
+iframe {
+	color-scheme: light !important;
+}
+</style>
+
 <style scoped>
 .loggedUser {
 	width: auto;
