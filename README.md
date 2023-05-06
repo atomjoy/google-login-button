@@ -13,6 +13,16 @@ Dodaj adresy uri dla klucza wideo: <https://www.youtube.com/watch?v=EaSWnk5fLdc>
 ## Generator przycisku logowania Google
 <https://developers.google.com/identity/gsi/web/tools/configurator?hl=en>
 
+## Css style
+
+Likwidacja białego tła iframe dla dark mode w przeglądarce.
+
+```
+iframe {
+	color-scheme: light !important;
+}
+```
+
 ## Przycisk z Javascript Api
 
 Zmień google klient id: <GOOGLE_CLIENT_ID>.apps.googleusercont.com
