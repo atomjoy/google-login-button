@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>One Tap Login</title>
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+    </head>
+  <body>
+    <!-- 
+      data-callback=""       
+      data-login_uri="https://your.domain/your_login_endpoint"
+    -->
+    <script src="https://accounts.google.com/gsi/client?hl=pl" async></script>
+    <div id="g_id_onload"
+        data-client_id="118005934148-orsfg1qsrmqf76oi2qsaimqff23lf1dq.apps.googleusercontent.com"        
+        data-login_uri="http://localhost/onetap"
+        data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left"
+        data-locale="pl">
+    </div>
+  <body>
+</html>

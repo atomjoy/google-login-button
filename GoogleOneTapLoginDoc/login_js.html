@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>One Tap Login</title>
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    </head>
+  <body>
+    <!-- 
+        Ostrzeżenie: jeśli korzystasz z interfejsu JavaScript API, nie używaj w kodzie HTML g_id_onload ani g_id_signin. 
+    -->
+    <script src="https://accounts.google.com/gsi/client?hl=pl" async></script>
+    <script>
+      function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+        
+        const responsePayload = decodeJwtResponse(response.credential);
+        console.log("ID: " + responsePayload.sub);
+        console.log('Full Name: ' + responsePayload.name);
+        console.log('Given Name: ' + responsePayload.given_name);
+        console.log('Family Name: ' + responsePayload.family_name);
+        console.log("Image URL: " + responsePayload.picture);
+        console.log("Email: " + responsePayload.email);
+
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "118005934148-orsfg1qsrmqf76oi2qsaimqff23lf1dq.apps.googleusercontent.com",
+          login_uri: "http://localhost/onetap",
+          callback: handleCredentialResponse,
+          // login_uri: "https://your.domain/your_login_endpoint"
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          { theme: "outline", size: "large", locale: "pl" }  // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      }
+    </script>
+    <div id="buttonDiv"></div>
+  </body>
+</html>
